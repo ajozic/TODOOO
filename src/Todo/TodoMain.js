@@ -7,11 +7,11 @@ import TaskDnD from './TaskDnD/index'
 
 class TodoMain extends Component {
     componentWillMount() {
-        // this.loadBlockchainData()
+        this.loadBlockchainData()
     }
 
     async loadBlockchainData() {
-        const web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:75")
+        const web3 = new Web3(Web3.givenProvider || "http://127.0.0.1:7545")
         const accounts = await web3.eth.getAccounts()
         this.setState({ account: accounts[0] })
         const todoList = new web3.eth.Contract(TODO_LIST_ABI, TODO_LIST_ADDRESS)
@@ -54,6 +54,7 @@ class TodoMain extends Component {
         this.state.todoList.methods.toggleCompleted(taskId).send({ from: this.state.account })
             .once('receipt', (receipt) => {
                 this.setState({ loading: false })
+                window.location.reload(false);
             })
     }
 
@@ -78,7 +79,7 @@ class TodoMain extends Component {
                             {/*        createTask={this.createTask}*/}
                             {/*        toggleCompleted={this.toggleCompleted} />*/}
                             {/*}*/}
-                            <TaskDnD/>
+                            <TaskDnD tasks={this.state.tasks} createTask={this.createTask} />
                         </main>
                     </div>
                 </div>
