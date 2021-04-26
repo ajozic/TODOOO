@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 
 import Login from './Login/Login'
-import TodoMain from "./Todo/TodoMain";
+import SignUp from "./SignUp/SignUp";
+import Dashboard from "./Dashboard/Dashboard";
 
 const App = () => {
   return(
@@ -17,8 +18,11 @@ const App = () => {
             <Route exact path="/">
               <Login />
             </Route>
-            <Route exact path="/todo">
-              <TodoMain />
+            <Route exact path="/sign-up">
+              <SignUp />
+            </Route>
+            <Route exact path="/dashboard">
+              <Dashboard />
             </Route>
           </Switch>
         </div>

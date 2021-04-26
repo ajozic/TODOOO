@@ -4,6 +4,7 @@ import '../App.css'
 import { TODO_LIST_ABI, TODO_LIST_ADDRESS } from '../config'
 import TodoList from './TodoList'
 import TaskDnD from './TaskDnD/index'
+import SimpleModal from "../Dashboard/SimpleModal";
 
 class TodoMain extends Component {
     componentWillMount() {
@@ -60,14 +61,6 @@ class TodoMain extends Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-                    <a className="navbar-brand col-sm-3 col-md-2 mr-0" href="#" target="_blank">Blockchain React Todo List</a>
-                    <ul className="navbar-nav px-3">
-                        <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-                            <small><a className="nav-link" href="#"><span id="account"></span></a></small>
-                        </li>
-                    </ul>
-                </nav>
                 <div className="container-fluid">
                     <div className="row">
                         <main role="main" className="col-lg-12 d-flex justify-content-center">
@@ -79,6 +72,7 @@ class TodoMain extends Component {
                             {/*        toggleCompleted={this.toggleCompleted} />*/}
                             {/*}*/}
                             <TaskDnD/>
+                            <SimpleModal/>
                         </main>
                     </div>
                 </div>
