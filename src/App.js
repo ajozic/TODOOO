@@ -9,6 +9,7 @@ import {
 import Login from './Login/Login'
 import SignUp from "./SignUp/SignUp";
 import Dashboard from "./Dashboard/Dashboard";
+import TodoTest from "./Plain/TodoTest";
 
 const App = () => {
   return(
@@ -23,6 +24,9 @@ const App = () => {
             </Route>
             <Route exact path="/dashboard">
               <Dashboard />
+            </Route>
+            <Route exact path="/test">
+              <TodoTest />
             </Route>
           </Switch>
         </div>
