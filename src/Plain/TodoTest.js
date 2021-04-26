@@ -1,6 +1,11 @@
-import React from "react";
+import React , {useEffect} from "react";
 
 const TodoTest = () => {
+
+    useEffect(() => {
+
+
+    },[])
     return(
         <>
             <div className="container-fluid">
@@ -55,11 +60,7 @@ const TodoTest = () => {
                 </div>
             </div>
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-            <script src="vendor/web3/dist/web3.js"></script>
-            <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-            <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
-            <script src="app.js"></script>
+
         </>
     )
 }
